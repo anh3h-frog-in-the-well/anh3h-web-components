@@ -32,7 +32,10 @@ export class MainPage extends LitElement {
     private router = new Router(this, [
         {
             path: '/',
-            render: () => html`<div>This is the home page</div>`,
+            render: () => html`<h2>This is the home page</h2>
+                                <div id="remote-app">
+                                    <my-remote-button></my-remote-button>
+                                </div>`,
         },
         {
             path: '/about',
@@ -54,5 +57,11 @@ export class MainPage extends LitElement {
                             <p>&copy; 2026 Anh3h's Web Components. All rights reserved.</p>
                         </div>
                     </div>`;
+    }
+
+    protected async firstUpdated(): Promise<void> {
+        // @ts-ignore
+        const  mountRemoteApp = await import('remote-components/remote-button');
+        console.log('remote app', mountRemoteApp);
     }
 }
