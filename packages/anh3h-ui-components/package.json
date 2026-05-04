@@ -1,21 +1,20 @@
 {
-  "name": "anh3h-remote-components",
+  "name": "anh3h-ui",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/anh3h-ui.es.js",
   "scripts": {
-    "dev": "vite --port 3001",
     "build": "vite build",
     "check-types": "tsc --noEmit",
-    "preview": "vite preview"
+    "clean": "rm -rf dist"
   },
   "dependencies": {
-    "lit": "^3.3.2",
-    "anh3h-ui": "0.0.0"
+    "lit": "^3.3.2"
   },
   "devDependencies": {
     "typescript": "~5.9.3",
     "vite": "^8.0.1",
-    "@module-federation/vite": "^1.13.6"
+    "vite-plugin-dts": "^4.5.4"
   }
 }
